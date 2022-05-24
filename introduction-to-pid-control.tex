@@ -76,29 +76,29 @@ will come in.
 
 \subsection{Integral Control}
 
-Integral control increases action not only in relation to error but also the length of time 
-for which the action has taken place. When an applied force is not enough to bring the error 
-to zero, the force will then be increased as time passes. When purely integral control is 
-being used, the controller may bring the error to zero, but it would start with a slow 
-reaction time which would have small action and increase as time goes on, and near the 
-end the action will increase as long as the error is positive, even if the error is 
+Integral control increases action not only in relation to error but also the length of time
+for which the action has taken place. When an applied force is not enough to bring the error
+to zero, the force will then be increased as time passes. When purely integral control is
+being used, the controller may bring the error to zero, but it would start with a slow
+reaction time which would have small action and increase as time goes on, and near the
+end the action will increase as long as the error is positive, even if the error is
 nearing zero.
 
-If too much integral is being applied when the error is small and decreasing, it will 
-usually lead to the controller overshooting. After the controller has been 
-overshooting, applying a large correction in the opposite direction and reapeadity 
-overshooting the desired position again, would cause the output to oscillate around 
-the setpoint. If the amplitude of the oscillations increase with time then the 
-system would be considered unstable. If the oscillations decrease with time then 
+If too much integral is being applied when the error is small and decreasing, it will
+usually lead to the controller overshooting. After the controller has been
+overshooting, applying a large correction in the opposite direction and reapeadity
+overshooting the desired position again, would cause the output to oscillate around
+the setpoint. If the amplitude of the oscillations increase with time then the
+system would be considered unstable. If the oscillations decrease with time then
 the system would be considered stable.
 
 \subsection{Derivative Control}
 
-A derivative controller does not consider the magnitude of an error, which means 
-a purely derivative controller is unable to bring a system to its setpoint since 
-it can't bring an error to zero, but a derivative controller considers the rate 
-of change of an error, which it tries to bring that to zero. It attempts at 
-flattening the trajectory of error into a flat horizontal line, which dampens 
+A derivative controller does not consider the magnitude of an error, which means
+a purely derivative controller is unable to bring a system to its setpoint since
+it can't bring an error to zero, but a derivative controller considers the rate
+of change of an error, which it tries to bring that to zero. It attempts at
+flattening the trajectory of error into a flat horizontal line, which dampens
 the force applied and thus will reduce overshooting.
 
 \section{PID Controller Theory}
@@ -140,11 +140,11 @@ integral control acts.
 
 \subsection{Integral Term}
 
-The integral term's contribution to a PID controller is the sum of the accumulated error 
-value \(e(t)\) over a specific amount of time which is known as the delta-time \(dt\) and 
-it provides the accumulated offset that should have been corrected on previous iterations. 
-The accumulated error value \(e(t)\) is then multiplied by the integral gain constant 
-\(K_i\) and it then gets added to the controller output \(u(t)\). See (\ref{kI}) below 
+The integral term's contribution to a PID controller is the sum of the accumulated error
+value \(e(t)\) over a specific amount of time which is known as the delta-time \(dt\) and
+it provides the accumulated offset that should have been corrected on previous iterations.
+The accumulated error value \(e(t)\) is then multiplied by the integral gain constant
+\(K_i\) and it then gets added to the controller output \(u(t)\). See (\ref{kI}) below
 for the equation that integral control performs.
 
 \begin{equation}
@@ -247,6 +247,7 @@ the controller output starts to oscillate constantly. \(K_u\) and the oscillatio
             \textbf{Control Type} & \(K_p\)     & \(K_i\)         & \(K_d\)        \\ \midrule
             \textbf{P}            & \(0.50K_u\) & ---             & ---            \\
             \textbf{PI}           & \(0.45K_u\) & \(0.54K_u/T_u\) & ---            \\
+            \textbf{PD}           & \(0.8K_u\)  & ---             & \(0.10K_uT_u\) \\
             \textbf{PID}          & \(0.60K_u\) & \(1.2K_u/T_u\)  & \(3K_uT_u/40\) \\ \bottomrule
         \end{tabular}
     \end{center}
