@@ -76,7 +76,7 @@ will come in.
 
 \subsection{Integral Control}
 
-Integral control increased action not only in relation to error but also the length of time 
+Integral control increases action not only in relation to error but also the length of time 
 for which the action has taken place. When an applied force is not enough to bring the error 
 to zero, the force will then be increased as time passes. When purely integral control is 
 being used, the controller may bring the error to zero, but it would start with a slow 
@@ -140,12 +140,12 @@ integral control acts.
 
 \subsection{Integral Term}
 
-The contribution of the integral term is proportional to the magnitude of the error value \(e(t)\) and
-the duration of the error value. The integral in the equation of a PID controller is the sum of the
-accumulated error over time and it provides the accumulated offset that should have been corrected on
-previous iterations. The accumulated error value \(e(t)\) is then multiplied by the integral gain
-constant \(K_i\) and it then gets added to the controller output \(u(t)\). Please see (\ref{kI}) below for
-the equation that integral control performs.
+The integral term's contribution to a PID controller is the sum of the accumulated error 
+value \(e(t)\) over a specific amount of time which is known as the delta-time \(dt\) and 
+it provides the accumulated offset that should have been corrected on previous iterations. 
+The accumulated error value \(e(t)\) is then multiplied by the integral gain constant 
+\(K_i\) and it then gets added to the controller output \(u(t)\). See (\ref{kI}) below 
+for the equation that integral control performs.
 
 \begin{equation}
     \displaystyle {u(t)=K_i\int e(t)dt}\label{kI}
@@ -163,7 +163,7 @@ desired value is.
 The derivative term is responsible for the calculation of the derivative of the error value
 and it does this by determining the slope of the error over time and multiplying that by
 the derivative gain constant \(K_d\) and it then gets added to the controller output \(u(t)\).
-Please see (\ref{kD}) below for the equation that derivative control performs.
+See (\ref{kD}) below for the equation that derivative control performs.
 
 \begin{equation}
     \displaystyle {u(t)=K_d\frac{de}{dt}}\label{kD}
